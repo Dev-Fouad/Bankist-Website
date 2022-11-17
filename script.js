@@ -1,13 +1,16 @@
 'use strict';
 
-///////////////////////////////////////
+// Selecting Element
+let modal = document.querySelector('.modal');
+let overlay = document.querySelector('.overlay');
+let btnCloseModal = document.querySelector('.btn--close-modal');
+let btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+let btnScrollto = document.querySelector('.btn--scroll-to');
+let section1 = document.querySelector('#section--1')
+
+
+
 // Modal window
-
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.btn--close-modal');
-const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-
 const openModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
