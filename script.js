@@ -21,7 +21,7 @@ const closeModal = function () {
   overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach((btn){
+btnsOpenModal.forEach((btn) => {
   btn.addEventListener('click', openModal);
 })
 
@@ -33,3 +33,6 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+// Screen 
