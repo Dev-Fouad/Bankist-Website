@@ -35,4 +35,8 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-// Screen 
+// Button scrolling
+btnScrollto.addEventListener('click' , function(){
+  section1.scrollIntoView({ behavior: 'smooth' })
+})
+
