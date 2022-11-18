@@ -7,6 +7,9 @@ let btnCloseModal = document.querySelector('.btn--close-modal');
 let btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 let btnScrollto = document.querySelector('.btn--scroll-to');
 let section1 = document.querySelector('#section--1')
+let tabs = document.querySelectorAll('.operations__tab');
+let tabsContainer = document.querySelector('.operations__tab-container');
+let tabsContent = document.querySelectorAll('.operations__content')
 
 
 
@@ -52,12 +55,6 @@ document.querySelector('.nav__links').addEventListener('click' , function(e){
 
 
 // Tabbbed component
-
-let tabs = document.querySelectorAll('.operations__tab');
-let tabsContainer = document.querySelector('.operations__tab-container');
-let tabsContent = document.querySelectorAll('.operations__content')
-
-
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
 
