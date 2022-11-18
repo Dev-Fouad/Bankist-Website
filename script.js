@@ -10,7 +10,7 @@ let section1 = document.querySelector('#section--1')
 let tabs = document.querySelectorAll('.operations__tab');
 let tabsContainer = document.querySelector('.operations__tab-container');
 let tabsContent = document.querySelectorAll('.operations__content')
-let nav = document.querySelector('.nav')
+let  nav = document.querySelector('.nav');
 
 
 // Modal window
@@ -76,18 +76,19 @@ tabsContainer.addEventListener('click', function (e) {
 
 
 // Menu fade animation
-nav.addEventListener('mouseover' , function(e) {
-  if (e.target.classList.contains('nav__link')){
-    let link = e.target
-    console.log(link);
-    let siblings = link.closest('.nav').querySelectorAll('.nav__link')
-    console.log(siblings);
-    let logo = link.closest('.nav').querySelector('img')
-    console.log(logo);
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
 
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opaciity = 0.5;
-    })
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
   }
-})
+};
 
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
