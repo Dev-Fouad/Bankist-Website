@@ -177,20 +177,25 @@ const maxSlide = slides.length;
 slider.style.transform = 'scale(0.2) translateX(-800px)'
 slider.style.overflow = 'visible'
 
-let goToSlide = function(slide) {
 
+let goToSlide = function(slide) {
   slides.forEach((s,i) => {
     s.style.transform = `translateX(${100 * (i - slide)}%)`
     // 0% , 100%, 200%, 300%
   }) 
 }
-// Next Slide
-btnRight.addEventListener('click' , function() {
+goToSlide(0)
+
+let nextslide = function(){
   if (curSlide === maxSlide - 1) {
     curSlide = 0;
   } else {
     curSlide++
   }
-
   goToSlide(curSlide);
-})
+  // -100%, 0%, 100%, 200%
+}
+
+// Next Slide
+btnRight.addEventListener('click' , nextslide)
+btnLeft.addEventListener('click')
