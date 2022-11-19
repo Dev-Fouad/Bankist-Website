@@ -93,6 +93,9 @@ const handleHover = function (e) {
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
+
+
+// Implementing the sticky Navigation
 let header = document.querySelector('.header')
 let navHeight = nav.getBoundingClientRect().height;
 
@@ -108,5 +111,31 @@ let headerObserver = new IntersectionObserver (stickyNav , {
   threshold: 0,
   rootMargin: `-${navHeight}px`,
 });
- n
+ 
 headerObserver.observe(header);
+
+
+// Revealing the sections
+let Allsections = document.querySelectorAll('.section')
+console.log(Allsections);
+
+let revealSection = function (entries, observer) {
+  let [entry] = entries
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove('section--hidden')
+  observer.unobserve(entry.target)
+}
+
+let sectionObserver = new IntersectionObserver (revealSection , {
+  root: null,
+  threshold: 0.15,
+});
+
+Allsections.forEach(function (section){
+  sectionObserver.observe(section)
+  section.classList.add('section--hidden')
+}) 
+
