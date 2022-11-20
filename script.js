@@ -174,12 +174,16 @@ let btnRight = document.querySelector('.slider__btn--right')
 let curSlide = 0;
 const maxSlide = slides.length;
 
+for ( [bayo , i] of slides.entries())
+console.log(bayo , i);
+
 slider.style.transform = 'scale(0.2) translateX(-800px)'
 slider.style.overflow = 'visible'
 
-
+console.log(slides);
 let goToSlide = function(slide) {
   slides.forEach((s,i) => {
+    console.log(slide);
     s.style.transform = `translateX(${100 * (i - slide)}%)`
     // 0% , 100%, 200%, 300%
   }) 
@@ -193,27 +197,8 @@ let nextslide = function(){
   } else {
     curSlide++
   } 
+  console.log(curSlide);
   goToSlide(curSlide);
   // -100%, 0%, 100%, 200%
 }
-        
-        
-// Previous Slider
-let prevSlide = function(){
-  if(curSlide === 0){
-    curSlide = maxSlide - 1
-  }else{
-    curSlide--
-  }
-  // goToSlide(curSlide--)
-  let goToSlide = function() {
-    console.log(curSlide)
-    slides.forEach((s,i) => {
-      s.style.transform = `translateX(${100 * (i - curSlide)}%)`
-      // 0% , 100%, 200%, 300%
-    }) 
-  }
-}
-
 btnRight.addEventListener('click' , nextslide)
-btnLeft.addEventListener('click', prevSlide)
