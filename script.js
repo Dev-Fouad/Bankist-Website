@@ -183,9 +183,7 @@ slider.style.overflow = 'visible'
 console.log(slides);
 let goToSlide = function(slide) {
   slides.forEach((s,i) => {
-    console.log(slide);
     s.style.transform = `translateX(${100 * (i - slide)}%)`
-    // 0% , 100%, 200%, 300%
   }) 
 }
 goToSlide(0)
@@ -197,8 +195,6 @@ let nextslide = function(){
   } else {
     curSlide++
   } 
-  console.log(curSlide);
   goToSlide(curSlide);
-  // -100%, 0%, 100%, 200%
 }
 btnRight.addEventListener('click' , nextslide)
