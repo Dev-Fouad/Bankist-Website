@@ -250,3 +250,4 @@ const slider = function () {
   });
 };
 slider();
+// I Refactor the codes  
